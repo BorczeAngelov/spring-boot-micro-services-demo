@@ -3,6 +3,7 @@ package com.borczeangelov.orderservice.service;
 import java.util.UUID;
 
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.borczeangelov.orderservice.dto.OrderLineItemsDto;
 import com.borczeangelov.orderservice.dto.OrderRequest;
@@ -14,6 +15,7 @@ import lombok.RequiredArgsConstructor;
 
 @Service
 @RequiredArgsConstructor
+@Transactional
 public class OrderService {
 
     private final OrderRepositroy orderRepositroy;
