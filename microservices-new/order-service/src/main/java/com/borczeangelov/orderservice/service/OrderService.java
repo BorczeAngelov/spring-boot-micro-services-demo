@@ -22,7 +22,7 @@ import lombok.RequiredArgsConstructor;
 public class OrderService {
 
     private final OrderRepositroy orderRepository;
-    private final WebClient webClient;
+    private final WebClient.Builder webClientBuilder;
 
     public void placceOrder(OrderRequest orderRequest) {
         var order = CreateOrder(orderRequest);
@@ -55,7 +55,7 @@ public class OrderService {
         orderLineItems.setQuantity(orderLineItemsDto.getQuantity());
         orderLineItems.setSkuCode(orderLineItemsDto.getSkuCode());
         return orderLineItems;
-    }    
+    }
 
     /*
      * Make a HTTP Get request to InventoryService and
@@ -64,10 +64,14 @@ public class OrderService {
     private boolean AreProductsInStock(Order order) {
         var skuCodes = order.getOrderLineItemsList().stream()
                 .map(OrderLineItems::getSkuCode)
-                .toList();
+                .toList();                
 
-        var inventoryResponsArray = webClient.get()
-                .uri("http://localhost:8082/api/inventory",
+        // var inventoryServiceUrl = "http://localhost:8082/api/inventory"; //hard-coded port
+        var inventoryServiceUrl = "http://inventory-service/api/inventory"; //flexible port + works with discoveryServer + multiple inventroy service instances
+
+        var inventoryResponsArray = webClientBuilder.build()
+                .get()
+                .uri(inventoryServiceUrl,
                         uriBuilder -> uriBuilder.queryParam("skuCode", skuCodes).build()) //?skuCode=iphone-13&skuCode=iphone13-red
                 .retrieve()
                 .bodyToMono(InventoryResponse[].class) //parse the object to InventoryResponse[]

@@ -56,3 +56,9 @@ microservices-new/inventory-service/target/surefire-reports/com.borczeangelov.in
 microservices-new/inventory-service/target/surefire-reports/TEST-com.borczeangelov.inventoryservice.InventoryServiceApplicationTests.xml
 microservices-new/inventory-service/target/test-classes/com/borczeangelov/inventoryservice/InventoryServiceApplicationTests.class
 .vscode/settings.json
+microservices-new/order-service/target/classes/com/borczeangelov/orderservice/config/WebClientConfig.class
+microservices-new/order-service/target/surefire-reports/2022-06-06T16-31-18_570-jvmRun1.dump
+microservices-new/order-service/target/classes/com/borczeangelov/orderservice/config/WebClientConfig.class
+microservices-new/order-service/target/classes/com/borczeangelov/orderservice/config/WebClientConfig.class
+target
+microservices-new/order-service/target/classes/com/borczeangelov/orderservice/config/WebClientConfig.class
