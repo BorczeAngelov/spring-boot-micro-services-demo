@@ -55,3 +55,4 @@ microservices-new/inventory-service/target/maven-status/maven-compiler-plugin/te
 microservices-new/inventory-service/target/surefire-reports/com.borczeangelov.inventoryservice.InventoryServiceApplicationTests.txt
 microservices-new/inventory-service/target/surefire-reports/TEST-com.borczeangelov.inventoryservice.InventoryServiceApplicationTests.xml
 microservices-new/inventory-service/target/test-classes/com/borczeangelov/inventoryservice/InventoryServiceApplicationTests.class
+.vscode/settings.json
